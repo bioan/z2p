@@ -1,7 +1,7 @@
 //! tests/health_check.rs
 
 #[tokio::test]
-#[allow(clippy::unused_must_use)]
+#[allow(unused_must_use)]
 async fn health_check_test(){
     spawn_app();
     let client = reqwest::Client::new();
