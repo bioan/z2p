@@ -1,6 +1,10 @@
+use std::net::TcpListener;
+
 use zero2prod::run;
 #[actix_web::main] // or #[tokio::main]
 async fn main() -> std::io::Result<()> {
-    let x = run();
-    x?.await
+    let listener = TcpListener::bind("0.0.0.0:0").expect("Failed to bind to random port");
+    let app = run(listener);
+    app?.await;
+    Ok(())
 }
