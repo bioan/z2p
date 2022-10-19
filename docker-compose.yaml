@@ -1,0 +1,10 @@
+version: '3'
+services:
+  db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_PASSWORD=secretpassword
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD:=password
+      - POSTGRES_DB:=newsletter
+      - POSTGRES_PORT:=5432
