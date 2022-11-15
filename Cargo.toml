@@ -17,6 +17,19 @@ actix-web = "4"
 reqwest = "0.11.12"
 serde = { version = "1.0.145", features = ["derive"] }
 tokio = { version = "1.21.2", features = ["macros", "rt"] }
+config = "0.11"
+
+[dependencies.sqlx]
+version = "0.5.7"
+default-features = false
+features = [
+    "runtime-actix-rustls",
+    "macros",
+    "postgres",
+    "uuid",
+    "chrono",
+    "migrate"
+]
 
 [target.x86_64-unknown-linux-gnu]
 rustflags = ["-C", "linker=clang", "-C", "link-arg=-fuse-ld=lld"]
